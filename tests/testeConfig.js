@@ -7,7 +7,6 @@ const conexao = new sequelize(config);
 let resultado = conexao.query("SELECT * FROM produtos");
 console.log(resultado)
 
-async function levantarProdutos() {
 
 async function levantarProdutos() {
 
