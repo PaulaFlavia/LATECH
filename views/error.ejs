@@ -1,15 +1,3 @@
-<%- include('partials/head') %>
-    <!-- Include Header -->
-
-    <h1>
-        <%= message %>
-    </h1>
-    <h2>
-        <%= error.mucholoco %>
-    </h2>
-    <pre><%= error.stack %></pre>
-</main>
-    
-    <%- include('partials/footer') %>
-
-
+<h1><%= message %></h1>
+<h2><%= error.status %></h2>
+<pre><%= error.stack %></pre>
