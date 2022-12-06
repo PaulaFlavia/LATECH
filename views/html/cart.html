@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/index.css" />
+    <link rel="stylesheet" href="/stylesheets/cart.css" />
+
+    <title>Latech</title>
+  </head>
+
+  <body>
+    <header class="index-header">
+      <div class="container">
+        <img
+          class="logo"
+          src="../public/img/logo_latech_final.png"
+          alt="logo-latech"
+        />
+        <div class="search-form">
+          <!-- Alterada a posição da div para funcionamento das medias queries-->
+          <form action="#" method="get" class="search-bar">
+            <input
+              class="search-bar"
+              type="text"
+              name="q"
+              placeholder="O que você procura?"
+            />
+            <button class="btn-sb" type="submit">
+              <img class="search" src="../public/img/icons8-pesquisar.svg" />
+            </button>
+          </form>
+        </div>
+        <div class="menu-hamburguer">
+          <input class="checkbox-menu" type="checkbox" id="checkbox-menu" />
+          <label class="hamburguer" for="checkbox-menu">
+            <span class="hamburguer-line"></span>
+            <span></span>
+            <span></span>
+          </label>
+          <nav class="nav">
+            <ul class="menu">
+              <li><a href="#">Produtos</a></li>
+              <li><a href="#">Ofertas</a></li>
+              <li><a href="#">Sobre nós</a></li>
+              <li>
+                <a href="#"
+                  ><img
+                    src="../public/img/icons8-adicionar-usuário-masculino-50.svg"
+                /></a>
+              </li>
+              <li>
+                <a href="#"
+                  ><img
+                    src="../public/img/icons8-carrinho-de-compras-carregado-50.svg"
+                /></a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="container-banner">
+        <div class="promo-banner">
+          <img
+            class="promo-banner-img"
+            src="../public/img/smart-technology-devices-gradient-background-responsive-web-design-flat-vector-illustration_582267-342.jpg"
+            alt=""
+          />
+          <div class="info-banner">
+            <p>Dia da</p>
+            <p>informática</p>
+            <p>
+              veja as principais<br />
+              informações das últimas<br />
+              décadas
+            </p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <ul class="banner-navbar banner-navbar-icons">
+          <l1><img src="../public/img/computer.svg" alt="" /></l1>
+          <l1><img src="../public/img/desktop.svg" alt="" /></l1>
+          <l1><img src="../public/img/smartphone.svg" alt="" /></l1>
+          <l1><img src="../public/img/accesories.svg" alt="" /></l1>
+        </ul>
+        <ul class="banner-navbar banner-navbar-links">
+          <li><a href="#">Notebook</a></li>
+          <li><a href="#">Desktop</a></li>
+          <li><a href="#">Celulares</a></li>
+          <li><a href="#">Acessórios</a></li>
+        </ul>
+      </div>
+      <hr />
+    </header>
+
+    <main>
+      <div class="ls-cart">
+        <header class="ls-cart-header">
+          <input type="checkbox" class="ls-checkbox-cart" />
+          <span class="ls-ico-cart ls-float-left"></span>
+          <small>MEU CARRINHO</small><br />
+          <strong>4 produto(s)</strong>
+        </header>
+        <div class="ls-cart-content">
+          <ul class="ls-no-list-style">
+            <li>
+              <a href="#">
+                <h4 class="ls-title-product"><strong>01</strong>celular</h4>
+                <img src="../public/img/celular.png" alt="" />
+                <p>(descrição)</p>
+              </a>
+              <p>Preço: R$</p>
+              <div class="cart-btn-label">
+                <label>quantidade:</label>
+                <div class="cart-btn">
+                  <button class="cart-btn-minus">
+                    <svg
+                      width="16"
+                      height="2"
+                      viewBox="0 0 16 2"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M0 1A.75.75 0 01.75.25h14.5a.75.75 0 010 1.5H.75A.75.75 0 010 1z"
+                        fill="#333"
+                      ></path>
+                    </svg></button
+                  ><input
+                    type="number"
+                    name="selector-quantity-input"
+                    autocomplete="off"
+                    class="cart-btn-input"
+                    value="1"
+                  />
+                  <div class="cart-btn-unidade">1</div>
+                  <button class="cart-btn-plus">
+                    <svg
+                      viewBox="0 0 16 16"
+                      aria-labelledby="plusSymbolRoundedIcon plusSymbolRoundedDesc"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M8 0a.75.75 0 00-.75.75v6.5H.75a.75.75 0 000 1.5h6.5v6.5a.75.75 0 001.5 0v-6.5h6.5a.75.75 0 000-1.5h-6.5V.75A.75.75 0 008 0z"
+                        fill="inherit"
+                      ></path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a href="#">
+                <h4 class="ls-title-product"><strong>01</strong>celular</h4>
+                <img src="../public/img/celular.png" alt="" />
+                <p>(descrição)</p>
+              </a>
+              <p>Preço: R$</p>
+              <div class="cart-btn-label">
+                <label>quantidade:</label>
+                <div class="cart-btn">
+                  <button class="cart-btn-minus">
+                    <svg
+                      width="16"
+                      height="2"
+                      viewBox="0 0 16 2"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M0 1A.75.75 0 01.75.25h14.5a.75.75 0 010 1.5H.75A.75.75 0 010 1z"
+                        fill="#333"
+                      ></path>
+                    </svg></button
+                  ><input
+                    type="number"
+                    name="selector-quantity-input"
+                    autocomplete="off"
+                    class="cart-btn-input"
+                    value="1"
+                  />
+                  <div class="cart-btn-unidade">1</div>
+                  <button class="cart-btn-plus">
+                    <svg
+                      viewBox="0 0 16 16"
+                      aria-labelledby="plusSymbolRoundedIcon plusSymbolRoundedDesc"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M8 0a.75.75 0 00-.75.75v6.5H.75a.75.75 0 000 1.5h6.5v6.5a.75.75 0 001.5 0v-6.5h6.5a.75.75 0 000-1.5h-6.5V.75A.75.75 0 008 0z"
+                        fill="inherit"
+                      ></path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a href="#">
+                <h4 class="ls-title-product"><strong>01</strong>celular</h4>
+                <img src="../public/img/celular.png" alt="" />
+                <p>(descrição)</p>
+              </a>
+              <p>Preço: R$</p>
+              <div class="cart-btn-label">
+                <label>quantidade:</label>
+                <div class="cart-btn">
+                  <button class="cart-btn-minus">
+                    <svg
+                      width="16"
+                      height="2"
+                      viewBox="0 0 16 2"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M0 1A.75.75 0 01.75.25h14.5a.75.75 0 010 1.5H.75A.75.75 0 010 1z"
+                        fill="#333"
+                      ></path>
+                    </svg></button
+                  ><input
+                    type="number"
+                    name="selector-quantity-input"
+                    autocomplete="off"
+                    class="cart-btn-input"
+                    value="1"
+                  />
+                  <div class="cart-btn-unidade">1</div>
+                  <button class="cart-btn-plus">
+                    <svg
+                      viewBox="0 0 16 16"
+                      aria-labelledby="plusSymbolRoundedIcon plusSymbolRoundedDesc"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M8 0a.75.75 0 00-.75.75v6.5H.75a.75.75 0 000 1.5h6.5v6.5a.75.75 0 001.5 0v-6.5h6.5a.75.75 0 000-1.5h-6.5V.75A.75.75 0 008 0z"
+                        fill="inherit"
+                      ></path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a href="#">
+                <h4 class="ls-title-product"><strong>01</strong>celular</h4>
+                <img src="../public/img/celular.png" alt="" />
+                <p>(descrição)</p>
+              </a>
+              <p>Preço: R$</p>
+              <div class="cart-btn-label">
+                <label>quantidade:</label>
+                <div class="cart-btn">
+                  <button class="cart-btn-minus">
+                    <svg
+                      width="16"
+                      height="2"
+                      viewBox="0 0 16 2"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M0 1A.75.75 0 01.75.25h14.5a.75.75 0 010 1.5H.75A.75.75 0 010 1z"
+                        fill="#333"
+                      ></path>
+                    </svg></button
+                  ><input
+                    type="number"
+                    name="selector-quantity-input"
+                    autocomplete="off"
+                    class="cart-btn-input"
+                    value="1"
+                  />
+                  <div class="cart-btn-unidade">1</div>
+                  <button class="cart-btn-plus">
+                    <svg
+                      viewBox="0 0 16 16"
+                      aria-labelledby="plusSymbolRoundedIcon plusSymbolRoundedDesc"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M8 0a.75.75 0 00-.75.75v6.5H.75a.75.75 0 000 1.5h6.5v6.5a.75.75 0 001.5 0v-6.5h6.5a.75.75 0 000-1.5h-6.5V.75A.75.75 0 008 0z"
+                        fill="inherit"
+                      ></path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <div class="btn-delivey-shipp">
+            <input
+              class="btn-zip-code"
+              type="text"
+              placeholder="digite o CEP"
+            />
+            <input class="btn-zip-code-submit" type="submit" />
+          </div>
+          <div class="ls-about-your-order">
+            <h5>resumo do pedido</h5>
+            <a href="">
+              <img src="" alt="" />
+              <p>(nome do produto):</p>
+              <p>(qtidade):</p>
+              <p>R$(valor unitário):</p>
+              <p>R$(total):</p>
+            </a>
+            <p>R$(frete):</p>
+            <hr />
+            <p>R$(total a pagar): R$</p>
+          </div>
+          <section class="ls-cart-footer ls-txt-center">
+            <a href="#" class="ls-btn-primary">Finalizar Compra</a>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <footer class="index-footer">
+      <div class="about-us">
+        <ul class="about-us">
+          <li><a class="footer-about-us" href="#">quem somos</a></li>
+          <li><a class="footer-about-us" href="#">notícia</a></li>
+          <li>
+            <a class="footer-about-us" href="#">politicas de privacidade</a>
+          </li>
+        </ul>
+      </div>
+      <div class="account">
+        <ul class="account">
+          <li><a class="footer-account" href="#">minha conta</a></li>
+          <li><a class="footer-account" href="#">meus produtos</a></li>
+          <li><a class="footer-account" href="#">status do pedido</a></li>
+        </ul>
+      </div>
+      <div class="images">
+        <div class="logo-footer">
+          <img
+            class="logo-footer"
+            src="../public/img/logo_latech_final.png"
+            alt="logo-latech"
+          />
+        </div>
+        <div class="social-media-icons">
+          <ul class="icons">
+            <li>
+              <a href="#"
+                ><img src="../public/img/icons8-facebook.svg"
+              /></a>
+            </li>
+            <li>
+              <a href="#"
+                ><img src="../public/img/icons8-instagram.svg"
+              /></a>
+            </li>
+            <li>
+              <a href="#"><img src="../public/img/icons8-twitter.svg" /></a>
+            </li>
+            <li>
+              <a href="#"><img src="../public/img/icons8-youtube.svg" /></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
