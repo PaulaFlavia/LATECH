@@ -26,6 +26,7 @@ module.exports = (sequelize, DataTypes) => {
                 allowNull: false
             },
             Users_idUsers: {
+            Users_idUsers: {
                 type: DataTypes.INTEGER,
                 allowNull: false
             }
@@ -39,9 +40,15 @@ module.exports = (sequelize, DataTypes) => {
         }
 
     )
+<<<<<<< HEAD
     Purchase.associate = (models) => {
         Purchase.belongsTo(models.User, { foreignKey: 'Users_idUsers', as: 'users' })
         Purchase.belongsToMany(
+=======
+    Purchase.associate = (models)=>{
+    Purchase.belongsTo(models.User, {foreignKey:'Userss_idUserss', as: 'users'})
+       Purchase.belongsToMany(
+>>>>>>> 35987bc (adequação de Models e testsModels de client para user (#12))
             models.Product,
             {
                 as: 'products',
