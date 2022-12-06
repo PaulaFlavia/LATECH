@@ -58,10 +58,6 @@ module.exports = (sequelize, DataTypes) => {
     User.associate = function (model) {
         User.hasMany(model.Purchase, { as: "purchases", foreignKey: "Users_idUsers" });
     }
-<<<<<<< HEAD
     return User;
-=======
-    return User
->>>>>>> b950132 (adequação de Models e testsModels de client para user (#12))
 
 };  
