@@ -47,8 +47,27 @@
   align-items: center;
   justify-content: space-around;
 }
-
-.product-box-image {
+.products-wrapper {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.products-title {
+  font-size: 2.4em;
+  font-weight: 400;
+  color: var(--gray);
+}
+.product-box {
+  background-color: var(--dust-white);
+  border-radius: 5px;
+  overflow: hidden;
+  transition: 300ms;
+  margin: 20px 0;
+}
+.product-box a {
+  display: block;
+}
+.product-box img {
+  width: 10%;
   border-bottom: 1px solid var(--dark-gray);
   border-radius: 16px;
   box-shadow: 10px 5px 5px var(--medium-gray) ;
