@@ -28,7 +28,7 @@ const ordersController = {
 
     showCart: async (req, res) => {
         let idsIntoCart = req.session.cart
-
+       
         let getProductById = async (id) => {
             console.log("🚀 ~ file: OrdersController.js:32 ~ getProductById ~ id", id)
 
