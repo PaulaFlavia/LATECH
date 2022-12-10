@@ -213,7 +213,7 @@ CREATE TABLE `users` (
   `Senha` varchar(12) NOT NULL,
   `Avatar` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idClientes`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -235,4 +235,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-12-06 10:16:46
+-- Dump completed on 2022-12-08 18:00:24
