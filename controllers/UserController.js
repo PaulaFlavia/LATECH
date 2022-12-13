@@ -6,7 +6,8 @@ const { JSON } = require("sequelize");
 
 const UserController = {
   userLogin: (req, res) => {
-    res.render("userLogin");
+    let erro = req.query.erro ? 1 : 0
+    res.render("userLogin", {erro});
   },
 
   doingLogin: async (req, res) => {
@@ -54,42 +55,34 @@ const UserController = {
     }
   },
 
-  createUser: async (req, res) => {
-    await User.create({
-      Nome: req.body.name,
-      Email: req.body.email,
-      Senha: bcrypt.hashSync(req.body.password, 10)
-    });
-    return res.redirect("/users/login");
+  // createUser: async (req, res) => {
+  //   await User.create({
+  //     Nome: req.body.name,
+  //     Email: req.body.email,
+  //     Senha: bcrypt.hashSync(req.body.password, 10),
+  //   });
+  //   return res.redirect("/users/login");
+  // },
+
+
+    createUser: async (req, res) => {
+      let userExists =  await User.findOne ({
+        raw: true,
+        where: {
+          Email: req.body.email,
+        },
+      });
+    if(userExists){
+      return res.redirect("/users/login?erro=1");
+     }  else {
+      await User.create({
+        Nome: req.body.name,
+        Email: req.body.email,
+        Senha: bcrypt.hashSync(req.body.password, 10),
+      });
+      return res.redirect("/users/login");
+    }
   },
-  // let userExists =  await User.findOne ({
-  //   raw: true,
-  //   where: {
-  //     Email: req.body.email,
-  //   },
-  // });
-  // if(userExists){
-  //   res.redirect('/users/login',
-  //   {errors:{
-  //    Email: {
-  //      msg:'Já existe uma conta cadastrada com esse email.'
-  //    }
-  //   }})
-  //  }
-  // let userExists =  await User.findOne ({
-  //   raw: true,
-  //   where: {
-  //     Email: req.body.email,
-  //   },
-  // });
-  // if(userExists){
-  //   res.redirect('/users/login',
-  //   {errors:{
-  //    Email: {
-  //      msg:'Já existe uma conta cadastrada com esse email.'
-  //    }
-  //   }})
-  //  }
   // getUsers: (req, res) => {
   //   const usersList = User.findAll().then(function (allUsersList) {
   //     return cosole.log(allUserList);
