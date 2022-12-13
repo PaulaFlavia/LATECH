@@ -6,14 +6,11 @@ const ordersController = {
     index: (req, res) => {
 
         db.Product.findAll()
-        .then(function(productsReturned){
-            
-            return res.render('products.ejs', {products: productsReturned})
-            
-        })
-        .catch((error)=> console.log(error))
-        
-        
+            .then(function (productsReturned) {
+                return res.render('index.ejs', { products: productsReturned })
+            })
+            .catch((error) => console.log(error))
+
     },
 
     addCart: (req, res) => {
