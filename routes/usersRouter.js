@@ -5,11 +5,13 @@ const { signUpValidation } = require('../controllers/UserController');
 const router = express.Router();
 const UserController = require('../controllers/UserController');
 const validationsSignUp = require('../middlewares/validationsSignUpMiddleware');
+const validationsLog = require('../middlewares/validationsLogMiddleware')
+
 
 /* GET users listing. */
 router.get('/', UserController.signUp);
-router.get('/', UserController.signUp);
-router.post('/', validationsSignUp, UserController.signUpValidation)
+router.get('/', UserController.signUp); 
+router.post('/',validationsSignUp, UserController.signUpValidation)
 router.post('/create', UserController.createUser);
 
 router.get('/login', UserController.userLogin);
