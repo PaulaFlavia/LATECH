@@ -20,7 +20,7 @@ const ordersController = {
 
             req.session.cart = [req.body.selectedProduct]
         }
-
+        
 
         res.redirect('/products')
     },
@@ -50,7 +50,6 @@ const ordersController = {
             p.totalProduto = p.Preco * p.quantidade;
         });
 
-        req.session.order = productsIntoCart;
         res.render('cart.ejs', { productsIntoCart })
     },
 
@@ -65,11 +64,11 @@ const ordersController = {
         productsIntoCart[index].quantidade = productQtyChanged;
         productsIntoCart[index].totalProduto = productsIntoCart[index].Preco * productsIntoCart[index].quantidade;
 
-        req.session.order = productsIntoCart;
+        req.session.cart = productsIntoCart;
 
         res.render('cart.ejs', { productsIntoCart });
 
-
+                
     },
 
     releaseOrder: (req, res) => {
