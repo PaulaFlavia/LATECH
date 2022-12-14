@@ -1,8 +1,6 @@
 const { validationResult } = require("express-validator");
-
 const { User } = require("../database/models/");
 const bcrypt = require("bcrypt");
-const { JSON } = require("sequelize");
 
 const UserController = {
   userLogin: (req, res) => {
@@ -22,7 +20,14 @@ const UserController = {
       req.body.password,
       userToLogin.Senha
     )) {
-      return res.render("index");
+      delete userToLogin.Senha;
+      req.session.userLogged = userToLogin;
+      return res.redirect("/");
+    } else if((userToLogin && !bcrypt.compareSync(
+      req.body.password,
+      userToLogin.Senha
+    ))){
+      return res.redirect("/users/login?erro=2");
     } else {
       return res.render("userLogin", {
         errors: "Este email não está cadastrado",
@@ -55,16 +60,6 @@ const UserController = {
     }
   },
 
-  // createUser: async (req, res) => {
-  //   await User.create({
-  //     Nome: req.body.name,
-  //     Email: req.body.email,
-  //     Senha: bcrypt.hashSync(req.body.password, 10),
-  //   });
-  //   return res.redirect("/users/login");
-  // },
-
-
     createUser: async (req, res) => {
       let userExists =  await User.findOne ({
         raw: true,
@@ -82,6 +77,11 @@ const UserController = {
       });
       return res.redirect("/users/login");
     }
+  },
+
+  logout: async(req, res) => {
+    req.session.destroy(),
+    res.redirect('/')
   },
   // getUsers: (req, res) => {
   //   const usersList = User.findAll().then(function (allUsersList) {

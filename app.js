@@ -14,6 +14,13 @@ const usersRouter = require('./routes/usersRouter');
 const getViewsData = require('./middlewares/GetViewsData')
 
 const app = express();
+
+app.use(session({
+  secret: "supersecret",
+  resave: false,
+  saveUninitialized: false,
+}));
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');

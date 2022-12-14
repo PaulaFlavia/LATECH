@@ -17,9 +17,11 @@ router.get('/account', UserController.showUserAccount);
 router.get('/forgotPassword', UserController.forgotPassword);
 
 
-//router.get('/logout', UserController.logout);
-// router.post('/', UserController.loginValidation)
 
+router.get('/logout', UserController.logout);
+
+
+  
 
 module.exports = router;
 

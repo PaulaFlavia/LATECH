@@ -8,9 +8,11 @@
 
   <div class="login">
     <div class="input-container">
-      <% if(erro==1) {%>
+      <% if(erro==1) { %>
         <div class="error"> Já existe uma conta usando esse email, deseja fazer login? </div>
-        <%}%>
+         <%} else if(erro==2) { %> 
+          <div class = "error"> Credenciais inválidas</div> 
+          <% } %>
       <form method="post" action= "/users/login">
         <label for="input-name">Nome</label>
         <input
