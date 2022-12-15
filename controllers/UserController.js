@@ -1,6 +1,9 @@
 const { validationResult } = require("express-validator");
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0166a46 (User controller atualizado)
 const { User } = require("../database/models/");
 const bcrypt = require("bcrypt");
 const { JSON } = require("sequelize");
