@@ -800,10 +800,10 @@ footer {
     margin: 25px;
     }
 
-    @media (min-width: 1281px) {
+    @media (min-width: 1200px) {
       /* hi-res laptops and desktops */
       .index-main {
-        max-width: 1280px;
+        max-width: 1200px;
       }
 
       .search-form {

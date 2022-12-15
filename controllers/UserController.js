@@ -1,6 +1,8 @@
 const { validationResult } = require("express-validator");
+
 const { User } = require("../database/models/");
 const bcrypt = require("bcrypt");
+const { JSON } = require("sequelize");
 
 const UserController = {
   userLogin: (req, res) => {
@@ -20,14 +22,7 @@ const UserController = {
       req.body.password,
       userToLogin.Senha
     )) {
-      delete userToLogin.Senha;
-      req.session.userLogged = userToLogin;
-      return res.redirect("/");
-    } else if((userToLogin && !bcrypt.compareSync(
-      req.body.password,
-      userToLogin.Senha
-    ))){
-      return res.redirect("/users/login?erro=2");
+      return res.render("index");
     } else {
       return res.render("userLogin", {
         errors: "Este email não está cadastrado",
@@ -60,29 +55,42 @@ const UserController = {
     }
   },
 
-    createUser: async (req, res) => {
-      let userExists =  await User.findOne ({
-        raw: true,
-        where: {
-          Email: req.body.email,
-        },
-      });
-    if(userExists){
-      return res.redirect("/users/login?erro=1");
-     }  else {
-      await User.create({
-        Nome: req.body.name,
-        Email: req.body.email,
-        Senha: bcrypt.hashSync(req.body.password, 10),
-      });
-      return res.redirect("/users/login");
-    }
+  createUser: async (req, res) => {
+    await User.create({
+      Nome: req.body.name,
+      Email: req.body.email,
+      Senha: bcrypt.hashSync(req.body.password, 10)
+    });
+    return res.redirect("/users/login");
   },
-
-  logout: async(req, res) => {
-    req.session.destroy(),
-    res.redirect('/')
-  },
+  // let userExists =  await User.findOne ({
+  //   raw: true,
+  //   where: {
+  //     Email: req.body.email,
+  //   },
+  // });
+  // if(userExists){
+  //   res.redirect('/users/login',
+  //   {errors:{
+  //    Email: {
+  //      msg:'Já existe uma conta cadastrada com esse email.'
+  //    }
+  //   }})
+  //  }
+  // let userExists =  await User.findOne ({
+  //   raw: true,
+  //   where: {
+  //     Email: req.body.email,
+  //   },
+  // });
+  // if(userExists){
+  //   res.redirect('/users/login',
+  //   {errors:{
+  //    Email: {
+  //      msg:'Já existe uma conta cadastrada com esse email.'
+  //    }
+  //   }})
+  //  }
   // getUsers: (req, res) => {
   //   const usersList = User.findAll().then(function (allUsersList) {
   //     return cosole.log(allUserList);

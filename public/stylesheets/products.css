@@ -112,7 +112,7 @@
   }
   }
 
-  @media (min-width: 1281px) {
+  @media (min-width: 1200px) {
     /* hi-res laptops and desktops */
     .product-box {
       width: 500px;

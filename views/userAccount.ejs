@@ -11,88 +11,92 @@
     <button class="btn-user-purchase-order">Meus pedidos</button>
     <button class="btn-user-data">Meus dados</button>
   </div>
-  <div class="order-container">
-    <h3>Meus Pedidos</h3>
-    <div class="order-list">
-      <p>Pedido:</p>
-      <p>Status:</p>
-    </div>
-    <h3>Minhas Compras</h3>
-    <div class="ordered-products-container">
-      <div class="list-of-products">
-        <div class="ordered-product">
-          <img src="../public/img/celular.png" alt="" />
-          <div class="order-info">
-            <p>Produto</p>
-            <p>Preço</p>
-            <p>Quantidade</p>
-            <p>Subtotal</p>
+  <div class="user-container">
+    <div class="container-wrap">
+      <div class="order-container">
+        <h3>Meus Pedidos</h3>
+        <div class="order-list">
+          <p>Pedido:</p>
+          <p>Status:</p>
+        </div>
+        <h3>Minhas Compras</h3>
+        <div class="ordered-products-container">
+          <div class="list-of-products">
+            <div class="ordered-product">
+              <img src="../public/img/celular.png" alt="" />
+              <div class="order-info">
+                <p>Produto</p>
+                <p>Preço</p>
+                <p>Quantidade</p>
+                <p>Subtotal</p>
+              </div>
+            </div>
+          </div>
+          <div class="total-of-products">
+            <p>Valor do Frete:</p>
+            <p>Total do Pedido:</p>
           </div>
         </div>
       </div>
-      <div class="total-of-products">
-        <p>Valor do Frete:</p>
-        <p>Total do Pedido:</p>
+      <div class="user-info-container">
+        <h3>Olá,</h3>
+        <div class="user-avatar">
+          <div class="avatar-img">
+            <label for="avatar" class="avatar-label"></label>
+            <input type="file" name="avatar" id="avatar" class="avatar" />
+          </div>
+          <button class="btn-update-avatar">Editar</button>
+        </div>
+        <div class="user-form">
+          <form class="user-info-form" action="/account" method="POST">
+            <div class="user-form-class">
+              <label class="form-label" for="nome">Nome do usuário:</label>
+              <input
+                class="input-label"
+                type="text"
+                id="nome"
+                name="nome"
+                placeholder=""
+                value=""
+              />
+            </div>
+            <div class="user-form-class">
+              <label class="form-label" for="email">E-mail:</label>
+              <input
+                class="input-label"
+                type="email"
+                id="email"
+                name="email"
+                placeholder=""
+                value=""
+              />
+            </div>
+            <div class="user-form-class">
+              <label class="form-label" for="endereco">Endereço:</label>
+              <input
+                class="input-label"
+                type="text"
+                id="endereco"
+                name="endereco"
+                placeholder=""
+                value=""
+              />
+            </div>
+            <div class="user-form-class">
+              <label class="form-label" for="telefone">Telefone:</label>
+              <input
+                class="input-label"
+                type="text"
+                id="telefone"
+                name="telefone"
+                placeholder=""
+                value=""
+              />
+            </div>
+            <button class="btn-update">Editar</button>
+          </form>
+        </div>
       </div>
-    </div>
-  </div>
-  <div class="user-info-container">
-    <h3>Olá,</h3>
-    <div class="user-avatar">
-      <div class="avatar-img">
-        <label for="avatar" class="avatar-label"></label>
-        <input type="file" name="avatar" id="avatar" class="avatar" />
-      </div>
-      <button class="btn-update-avatar">Editar</button>
-    </div>
-    <div class="user-form">
-      <form class="user-info-form" action="/account" method="POST">
-        <div class="user-form-class">
-          <label class="form-label" for="nome">Nome do usuário:</label>
-          <input
-            class="input-label"
-            type="text"
-            id="nome"
-            name="nome"
-            placeholder=""
-            value=""
-          />
-        </div>
-        <div class="user-form-class">
-          <label class="form-label" for="email">E-mail:</label>
-          <input
-            class="input-label"
-            type="email"
-            id="email"
-            name="email"
-            placeholder=""
-            value=""
-          />
-        </div>
-        <div class="user-form-class">
-          <label class="form-label" for="endereco">Endereço:</label>
-          <input
-            class="input-label"
-            type="text"
-            id="endereco"
-            name="endereco"
-            placeholder=""
-            value=""
-          />
-        </div>
-        <div class="user-form-class">
-          <label class="form-label" for="telefone">Telefone:</label>
-          <input
-            class="input-label"
-            type="text"
-            id="telefone"
-            name="telefone"
-            placeholder=""
-            value=""
-          />
-        </div>
-        <button class="btn-update">Editar</button>
-      </form>
     </div>
   </div>
 </main>

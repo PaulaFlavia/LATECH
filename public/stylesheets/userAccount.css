@@ -16,8 +16,14 @@ input[type="text" i] {
   padding: 0;
 }
 
-.user-container {
+.user-container{
   width: 100%;
+  height: 100%;
+}
+
+.container-wrap{
+  width: 80%;
+  margin: 50px auto;
 }
 
 .user-menu {
@@ -56,7 +62,7 @@ input[type="text" i] {
 }
 
 .order-container {
-  margin: 0 20px;
+  margin: 50px auto;
 }
 
 .order-list {
@@ -93,7 +99,7 @@ input[type="text" i] {
 }
 
 .user-info-container h3 {
-  margin-left: 124px;
+  margin: 50px auto;
 }
 
 .user-form {
@@ -163,6 +169,12 @@ input[type="text" i] {
   font-size: 12px;
   text-align: center;
   margin-top: 8px;
+  transition: 0.3s;
+}
+
+.btn-update:hover{
+  cursor: pointer;
+  background-color: var(--ligth-blue);
 }
 
 input[type="file"] {
@@ -189,14 +201,18 @@ input[type="file"] {
   font-size: 12px;
   text-align: center;
   margin: 8px 0px 8px 200px;
+  transition: 0.3s;
 }
+
+.btn-update-avatar:hover{
+  cursor: pointer;
+  background-color: var(--ligth-blue);
+}
+
+
 
 @media (min-width: 801px) {
 
-  .user-container {
-    width: 96%;
-    margin-left: 20px;
-  }
   
   .order-container {
     font-size: 16px;
@@ -227,10 +243,10 @@ input[type="file"] {
 
 @media (min-width: 1025px) {
 
-  .user-container {
+  /*  {
     width: 90%;
     margin-left: 55px;
-  }
+  } */
 
   .ordered-product img {
     width: 18%;
@@ -247,18 +263,14 @@ input[type="file"] {
   }
 
   .btn-update-avatar {
-    margin-left: 812px;
+    margin-left: 660px;
   }
 }
 
-@media (min-width: 1281px) {
-  .user-container{
-    max-width: 1000px;
-    margin: 100px 200px;
-    
-  }
+@media (min-width: 1200px) {
 
   .order-container {
+    margin: 0 auto;
     font-size: 20px;
   }
 
@@ -271,8 +283,16 @@ input[type="file"] {
     margin-block: 0;
     margin-left: 424px;
   }
+  .btn-update-avatar {
+    margin-left: 800px;
+  }
 
   .user-info-container h3 {
     margin-left: 464px;
+  }
+}
+@media (min-width: 1800px) {
+  .btn-update-avatar {
+    margin-left: 1340px;
   }
 }

@@ -17,8 +17,7 @@ router.get('/account', UserController.showUserAccount);
 router.get('/forgotPassword', UserController.forgotPassword);
 
 
-
-router.get('/logout', UserController.logout);
+//  router.get('/logout', UserController.logout);
 
 
   

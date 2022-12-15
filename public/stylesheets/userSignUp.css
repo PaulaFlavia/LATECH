@@ -83,14 +83,15 @@
 }
 
 @media (min-width: 801px){
+
   .input-container{
     max-width: 600px;
     margin: 100px;
   }
   
+ 
   .register-account{
-    max-height: 500px;
-    margin-top: 80px;
+    margin: auto;
   }
 
 
@@ -101,7 +102,7 @@
 @media (min-width: 1025px){
 
 .input-container{
-  margin-left: 270px;
+  margin:50px auto;
 }
 
 .name,.email, .password {
@@ -113,14 +114,5 @@
 }
 }
 
-@media (min-width: 1245px){
 
-  .input-container{
-    margin-left: 370px;
-  }
-
-  .register-account{
-    margin-top: 200px;
-  }
-}
 

@@ -10,8 +10,11 @@
   --ligth-gray:#f1f1f1;
   --dust-white: #fbfbfb;
 }
+.login{
+  width: 100%;
+}
 
-.login {
+.input-container {
   width: 16rem;
   height: 100%;
   padding: 20px;
@@ -283,20 +286,25 @@ background-color: var(--ligth-blue);
 }
 
 @media(min-width: 801px){
-.login{
+.input-container{
   margin-top: 20px auto;
 }
 }
 
 @media(min-width: 1025px){
-  .login{
+  .input-container{
     margin-left: 360px;
   }
 }
 
-@media(min-width: 1245px){
-  .login{
+@media(min-width: 1200px){
+  .input-container{
     margin-left: 470px;
   }
 }
->>>>>>> 24dfbe5c6016e8c5c3d5fa5f3f213c1361356d38
+
+@media(min-width: 1800px){
+  .input-container{
+    margin: auto;
+  }
+}

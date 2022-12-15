@@ -159,7 +159,7 @@
     }
 }
 
-@media(min-width:1245px){
+@media(min-width:1200px){
     .detail {
         max-width: 70%;
         margin: 30px auto;

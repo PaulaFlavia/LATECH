@@ -94,7 +94,7 @@
 
 }
 
-  @media(min-width:1245px){
+  @media(min-width:1200px){
     .filter-container{
       margin: 40px 200px;
       justify-content: space-between;
