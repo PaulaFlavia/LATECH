@@ -11,7 +11,7 @@ router.post('/', validationsSignUp, UserController.signUpValidation)
 router.post('/create', UserController.createUser);
 
 router.get('/login', UserController.userLogin);
-router.post('/login', UserController.doingLogin);
+router.post('/login', UserController.loginProcess);
 
 router.get('/account', UserController.showUserAccount);
 router.get('/forgotPassword', UserController.forgotPassword);
