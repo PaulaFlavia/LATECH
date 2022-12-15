@@ -20,9 +20,9 @@ const ordersController = {
 
             req.session.cart = [req.body.selectedProduct]
         }
-        
 
-        res.redirect('/products')
+
+        res.redirect('/orders')
     },
 
 
@@ -30,8 +30,6 @@ const ordersController = {
         let idsIntoCart = req.session.cart
        
         let getProductById = async (id) => {
-            console.log("🚀 ~ file: OrdersController.js:32 ~ getProductById ~ id", id)
-
             let productFound = await db.Product.findByPk(
                 id, {
                 raw: true,
@@ -40,23 +38,29 @@ const ordersController = {
                 ]
             })
             console.log("🚀 ~ file: OrdersController.js:51 ~ getProductById ~ id", id)
+            console.log("🚀 ~ file: OrdersController.js:51 ~ getProductById ~ id", id)
             return productFound
         }
 
         let productsIntoCart = await Promise.all(idsIntoCart.map(getProductById))
 
         productsIntoCart.forEach((p) => {
+        productsIntoCart.forEach((p) => {
             p.quantidade = 1;
             p.totalProduto = p.Preco * p.quantidade;
         });
 
+        req.session.order = productsIntoCart;
         res.render('cart.ejs', { productsIntoCart })
-    },
+    })
+},
+
 
     updateCart: (req, res) => {
         let idProductToChange = req.body.productId;
         let productQtyChanged = req.body.productQty;
 
+        productsIntoCart = req.session.order;
         productsIntoCart = req.session.order;
 
         let index = productsIntoCart.findIndex((p) => p.idProdutos == idProductToChange);
@@ -64,11 +68,12 @@ const ordersController = {
         productsIntoCart[index].quantidade = productQtyChanged;
         productsIntoCart[index].totalProduto = productsIntoCart[index].Preco * productsIntoCart[index].quantidade;
 
-        req.session.cart = productsIntoCart;
+        req.session.order = productsIntoCart;
 
         res.render('cart.ejs', { productsIntoCart });
+        res.render('cart.ejs', { productsIntoCart });
 
-                
+
     },
 
     releaseOrder: (req, res) => {
