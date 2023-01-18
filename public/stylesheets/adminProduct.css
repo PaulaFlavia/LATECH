@@ -1,15 +1,13 @@
-.active  {
+.active {
   font-size: 15px;
   color: var(--ligth-blue);
   margin: 5%;
 }
-
 .inactive {
   font-size: 15px;
   color: var(--pink-degrade);
   margin: 5%;
 }
-
 .edit_title {
   margin: 5% 4%;
   background: linear-gradient(
@@ -23,14 +21,12 @@
   border-radius: 10px;
   box-shadow: 4px 4px 4px var(--dark-gray);
 }
-
 .search {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
 }
-
 .search-form {
   width: 300px;
   height: 30px;
@@ -40,7 +36,6 @@
   background-color: var(--dust-white);
   
 }
-
 .search-form form {
   display: flex;
   flex-direction: row;
@@ -51,9 +46,7 @@
   background-color: var(--dust-white);
   border-radius: 20px;
   margin-bottom: 10px;
-
 }
-
 .search-bar input {
   min-width: 200px;
   border: 0;
@@ -61,52 +54,40 @@
   background-color: var(--dust-white);
   margin-left: 8px;
 }
-
 .search-bar input::placeholder {
   color: var(--ligth-lilac);
   opacity: 0.2;
   background-color: var(--dust-white);
-
 }
-
 .btn_sb {
   width: 15px;
   height: 20px;
   margin-right: 20px;
- background-color: var(--dust-white);
+  background-color: var(--dust-white);
 }
-
 .btn_search {
   width: 30px;
   height: 20px;
   background-color: var(--dust-white);
- 
 }
-  
-
-
 .product_list {
   margin: 5%;
 }
-
 .product_list li {
   display: flex;
   border-bottom: 0.3px solid var(--ligth-blue);
   justify-content: space-between;
   align-items: center;
 }
-
 .product_list li p {
   padding: 10px;
   font-size: 12px;
 }
-
 .btn-container {
   display: flex;
   justify-content: flex-end;
   min-width: 150px;
 }
-
 .btn-admin-products {
   text-align: center;
   font-size: 10px;
@@ -118,31 +99,23 @@
   box-shadow: 2px 2px 2px var(--dark-gray);
   margin: 3px;
 }
-
 /* tablet, landscape iPad, lo-res laptops ands desktops */
 @media (min-width: 600px) {
   .search-form {
     width: 500px;
   }
-
 }
-
 @media (min-width: 900px) {
-
 }
-
-
-
 @media (min-width: 1200px) {
   .search-form {
     width: 700px;
   }
-  
 }
 
 @media (min-width: 1800px) {
   .search-form {
     width: 800px;
-    margin: 20px 500px
+    margin: 20px 500px;
   }
 }
