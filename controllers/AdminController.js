@@ -20,7 +20,7 @@ let onlyNumber = (s) => {
 
 const AdminController = {
   admin: (req, res) => {
-    //let error = req.query.error ? 1 : 0;
+
     res.render("adminMain");
   },
 
@@ -56,8 +56,6 @@ const AdminController = {
         WorkerId: req.body.workerAdmin,
         Password: bcrypt.hashSync(req.body.passwordAdmin, 10),
       });
-      //console.log(req.body);
-      //console.log(adminCreated);
       return res.redirect("/admin/login");
     }
   },
@@ -299,12 +297,12 @@ const AdminController = {
       raw: true,
       include: [
         { model: User, as: "users" },
-       // { model: Product, as: "product" }
-       
+        // { model: Product, as: "product" }
+
       ]
 
     });
-   
+
     return res.render("adminOrdersList", { ordersList });
   }
 };

@@ -106,10 +106,18 @@ const ordersController = {
 
         let total = totalProdutos(productsIntoCart)
 
-        req.session.order = productsIntoCart;
-        req.session.total = total
-        savings = req.session.savings
-
+        productsIntoCart.forEach((p) => {
+            p.subTotalProduto = p.Preco * p.quantidade;
+        });         
+        let subTotal = 0
+        for(let i=0; i< productsIntoCart.length; i++)
+        subTotal += productsIntoCart[i].subTotalProduto    
+        
+        let savings = subTotal - total
+        
+        req.session.order = productsIntoCart;        
+        req.session.total = total        
+               
         res.render('cart.ejs', { productsIntoCart, total, savings });
     },
     removeProduct: (req, res) => {
@@ -136,7 +144,6 @@ const ordersController = {
         let addressesUser = await Address.findAll({ raw: true, where: { users_idUser: id } });
 
         productsIntoCart = req.session.order
-
         total = req.session.total
 
         res.render('cartPayment.ejs', { productsIntoCart, total, user, loggedUser, addressesUser, })

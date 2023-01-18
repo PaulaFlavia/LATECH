@@ -37,7 +37,6 @@ const UserController = {
         Avatar: `/img/avatars/${avatarFileName}`,
         Cpf: req.body.personal_id,
         Senha: bcrypt.hashSync(req.body.password, 10),
-        //admin_idAdmin: 0 //Verificar como tratar isso
       });
       return res.redirect("/users/login");
     }
@@ -77,7 +76,6 @@ const UserController = {
 
             delete userToLogin.Senha;
             req.session.userLogged = userToLogin;
-            // console.log(req.session.userLogged);
           }
 
           if (req.body.remember_user) {
@@ -115,9 +113,7 @@ const UserController = {
 
   showUserAccount: async (req, res) => {
     const userLogged = req.session.userLogged;
-    console.log(userLogged)
     let { idUser } = userLogged;
-    console.log(idUser);
     let userPurchases = await Purchase.findAll(
       {
         raw: true,
@@ -131,10 +127,6 @@ const UserController = {
 
     res.render('userAccount', { userLogged, userPurchases })
   },
-
-
-
-
 
   userToUpdate: async (req, res) => {
     let userId = req.params.id;
