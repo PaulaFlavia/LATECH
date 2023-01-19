@@ -123,14 +123,14 @@ a {
 
 }
 
-.products-box img { /*ok*/
+.products-box img { 
   max-width: 8rem;
   max-height: 8rem;
   border-radius: 10px;    
 }
 
 
-.product-description{ /*ok*/
+.product-description{ 
   line-height: 20px;
   color: var(--dark-gray);
   text-align: center;
@@ -138,7 +138,7 @@ a {
   text-transform: uppercase;
 }
 
-.products-old-price { /* ok*/
+.products-old-price { 
   text-decoration: line-through;
   font-size: 10px;
   text-align: center;

@@ -14,10 +14,19 @@
                                     <img class="offer-products-image" src="<%= product['images.Imagem'] %>"
                                         alt="<%= product.Nome %>" />
                                     <div class="offer-products-description">
-                                        <%= product.Nome %>
-                                    </div>
-                                    <div class="offer-products-price">R$ <%= product.PrecoComDesconto %>
-                                    </div>
+                                            <%= product.Nome %>
+                                    </div class="product-box_data">
+                                    <% if (product.PrecoComDesconto> 0){ %>
+                                        <div>
+                                            <p class="offer-products-old-price">R$ <%= product.Preco %>
+                                            </p>
+                                            <p class="offer-products-price">R$ <%= product.PrecoComDesconto %>
+                                            </p>
+                                        </div>
+                                        <% } else { %>
+                                            <p class="offer-products-price">R$ <%= product.Preco %>
+                                            </p>
+                                        <% } %>  
                                     <Button class="btn-offer-detail-products">
                                         <a href="/products/detail/<%= product.idProdutos %>">Ver mais</a>
                                     </Button>
