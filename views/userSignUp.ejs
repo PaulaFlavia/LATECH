@@ -1,122 +1,103 @@
 <%- include('partials/head') %>
-<!-- Include Header -->
-<%- include('partials/header', {title: 'Início' }) %> <%-
-include('partials/navbarCategories') %>
+  <!-- Include Header -->
+  <%- include('partials/header', {title: 'Início' }) %>
+  
+  <%- include('partials/navbarCategories') %>
 
-<!-- Include Banner -->
+    <!-- Include Banner -->
 
-<main>
-  <link rel="stylesheet" href="../stylesheets/userSignUp.css" />
-  <br />
-  <h2 class="index_title">Cadastrar</h2>
+    <main>
+      <link rel="stylesheet" href="../stylesheets/userSignUp.css" />
+      <br>
+      <h2 class="index_title">Cadastrar</h2>
 
-  <div class="register-account">
-    <div>
-      <% if(error) {%>
-      <div class="error"><%= error %></div>
-      <%}%>
-    </div>
-    <div class="signup_form_container">
-      <form
-        class="register"
-        method="post"
-        action="/users/create"
-        enctype="multipart/form-data"
-      >
-        <div class="input_container">
-          <label for="name">Nome</label>
-          <input
-            class="name"
-            type="text"
-            name="name"
-            id="name_register"
-            value="<%= locals.oldData ? oldData.name : null %>"
-            placeholder="Digite seu nome"
-          />
-          <% if(locals.errors && errors.name) {%>
-          <div class="danger"><%= errors.name.msg %></div>
-          <% } %>
-
-          <label for="last_name">Sobrenome</label>
-          <input
-            class="name"
-            type="text"
-            name="last_name"
-            id="last_name_register"
-            value="<%= locals.oldData ? oldData.last_name : null %>"
-            placeholder="Digite seu Sobrenome"
-          />
-          <% if(locals.errors && errors.last_name) {%>
-          <div class="danger"><%= errors.last_name.msg %></div>
-          <% } %>
-
-          <label for="input_email">Email</label>
-          <input
-            class="name"
-            type="text"
-            name="email"
-            id="input_email"
-            value="<%= locals.oldData ? oldData.email : null %>"
-            placeholder="digite seu email"
-          />
-          <% if(locals.errors && errors.email) {%>
-          <div class="danger"><%= errors.email.msg %></div>
-          <% } %>
-
-          <label for="phone_number">Telefone</label>
-          <input
-            class="name"
-            type="text"
-            name="phone_number"
-            id="phone_number"
-            value="<%= locals.oldData ? oldData.phone_number : null %>"
-            placeholder="Digite seu telefone ou celular com ddd"
-          />
-          <% if(locals.errors && errors.phone_number) {%>
-          <div class="danger"><%= errors.phone_number.msg %></div>
-          <% } %>
-
-          <label for="personal_id">CPF</label>
-          <input
-            class="name"
-            type="text"
-            name="personal_id"
-            id="personal_id"
-            value="<%= locals.oldData ? oldData.personal_id : null %>"
-            placeholder="Digite apenas os números do seu CPF"
-          />
-          <% if(locals.errors && errors.personal_id) {%>
-          <div class="danger"><%= errors.personal_id.msg %></div>
-         
-          <% } %>
-
-          <label for="input_password">Senha</label>
-          <input
-            class="name"
-            type="password"
-            name="password"
-            id="input_password"
-            placeholder="digite uma senha"
-          />
-          <% if(locals.errors && errors.password) {%>
-          <div class="danger"><%= errors.password.msg %></div>
-          <% } %>
-
-          <label for="avatar">Avatar</label>
-          <input class="name" type="file" name="avatar" id="avatar" />
-
-          <% if(locals.errors && errors.avatar) {%>
-          <div class="danger"><%= errors.avatar.msg %></div>
-          <% } %>
-
-          <br />
-          <button class="btn_registration" type="submit">Cadastrar-se</button>
-          <br />
+      <div class="register-account">
+        <div>
+          <% if(error) {%>
+            <div class="error">
+              <%= error %>
+            </div>
+            <%}%>
         </div>
-      </form>
-      <a href="/users/login">Ou faça login</a>
-    </div>
-  </div>
-</main>
+        <div class="signup_form_container">
+          <form class="register" method="post" action="/users/create" enctype="multipart/form-data">
+            <div class="input_container">
 
-<%- include('partials/footer') %>
+              <label for="name">Nome</label>
+              <input class="name" type="text" name="name" id="name_register"
+                value="<%= locals.oldData ? oldData.name : null %>" placeholder="Digite seu nome" />
+              <% if(locals.errors && errors.name) {%>
+                <div class="danger">
+                  <%= errors.name.msg %>
+                </div>
+                <% } %>
+
+                  <label for="last_name">Sobrenome</label>
+                  <input class="name" type="text" name="last_name" id="last_name_register"
+                    value="<%= locals.oldData ? oldData.last_name : null %>" placeholder="Digite seu Sobrenome" />
+                  <% if(locals.errors && errors.last_name) {%>
+                    <div class="danger">
+                      <%= errors.last_name.msg %>
+                    </div>
+                    <% } %>
+
+                      <label for="input_email">Email</label>
+                      <input class="name" type="text" name="email" id="input_email"
+                        value="<%= locals.oldData ? oldData.email : null %>" placeholder="digite seu email" />
+                      <% if(locals.errors && errors.email) {%>
+                        <div class="danger">
+                          <%= errors.email.msg %>
+                        </div>
+                        <% } %>
+
+                          <label for="phone_number">Telefone</label>
+                          <input class="name" type="text" name="phone_number" id="phone_number"
+                            value="<%= locals.oldData ? oldData.phone_number : null %>"
+                            placeholder="Digite seu telefone ou celular com ddd" />
+                          <% if(locals.errors && errors.phone_number) {%>
+                            <div class="danger">
+                              <%= errors.phone_number.msg %>
+                            </div>
+                            <% } %>
+
+
+                              <label for="personal_id">CPF</label>
+                              <input class="name" type="text" name="personal_id" id="personal_id"
+                                value="<%= locals.oldData ? oldData.personal_id : null %>"
+                                placeholder="Digite apenas os números do seu CPF" />
+                              <% if(locals.errors && errors.personal_id) {%>
+                                <div class="danger">
+                                  <%= errors.personal_id.msg %>
+                                </div>
+                                <% } %>
+
+                                  <label for="input_password">Senha</label>
+                                  <input class="name" type="password" name="password" id="input_password"
+                                    placeholder="digite uma senha" />
+                                  <% if(locals.errors && errors.password) {%>
+                                    <div class="danger">
+                                      <%= errors.password.msg %>
+                                    </div>
+                                    <% } %>
+
+                                      <label for="avatar">Avatar</label>
+                                      <input class="name" type="file" name="avatar" id="avatar" />
+
+                                      <% if(locals.errors && errors.avatar) {%>
+                                        <div class="danger">
+                                          <%= errors.avatar.msg %>
+                                        </div>
+                                        <% } %>
+
+                                          <br>
+                                          <button class="btn_registration" type="submit">Cadastrar-se</button>
+                                          <br>
+                                          <a href="/users/login">Ou faça login</a>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </main>
+
+    <%- include('partials/footer') %>
